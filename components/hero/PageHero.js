@@ -10,7 +10,7 @@ export default function PageHero({text}) {
           >
             <div className="relative flex basis-[83.3333%] max-w-[83.3333%] items-cente justify-center">
               <div className="text text-center">
-                <h1 className="text-6xl font-poppins font-extrabold text-white">
+                <h1 className="text-6xl font-poppins font-extrabold text-white mb-32">
                   {text}
                 </h1>
               </div>

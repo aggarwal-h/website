@@ -2,16 +2,18 @@ import React from "react";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import LogoPill from "../logo/LogoPill";
 import classNames from "classnames";
+import Link from "next/link";
 
 export default function Navbar() {
   const scrollPosition = useScrollPosition();
+  const scrolled = scrollPosition >= 300;
   return (
     <nav
       className={classNames(
-        "flex flex-row flex-nowrap justify-start sticky py-3 px-4 items-center top-0 left-0 right-0 z-10 transition-all duration-300 delay-100",
+        "flex flex-row flex-nowrap justify-start sticky py-3 px-4 items-center top-0 left-0 right-0 z-50 transition-all duration-300 delay-100",
         {
-          "bg-white dark:bg-dark-800": scrollPosition >= 300,
-          "bg-transparent": scrollPosition < 300,
+          "bg-white shadow-sm dark:shadow-none dark:bg-dark-800": scrolled,
+          "bg-transparent": !scrolled,
         }
       )}
     >
@@ -30,64 +32,55 @@ export default function Navbar() {
           <span className="oi oi-menu"></span>
         </button> */}
 
-        <div className="flex flex-wrap basis-auto flex-grow-1 items-center ml-auto text-white font-poppins">
+        <div
+          className={classNames(
+            "flex flex-wrap basis-auto flex-grow-1 items-center ml-auto font-poppins transition-all duration-200",
+            {
+              "dark:text-white text-black": scrolled,
+              "text-white": !scrolled,
+            }
+          )}
+        >
           <ul className="flex-row flex pl-0 mb-0 list-none">
-            <li className="list-item">
-              <a href="index" className="text-base py-3 px-5 font-normal">
-                <span>Home</span>
-              </a>
-            </li>
-            <li className="list-item">
-              <a
-                href="index#about-section"
-                className="text-base py-3 px-5 font-normal"
-              >
-                <span>About</span>
-              </a>
-            </li>
-            <li className="list-item">
-              <a
-                href="index#education-section"
-                className="text-base py-3 px-5 font-normal"
-              >
-                <span>Education</span>
-              </a>
-            </li>
-            <li className="list-item">
-              <a
-                href="index#experience-section"
-                className="text-base py-3 px-5 font-normal"
-              >
-                <span>Experience</span>
-              </a>
-            </li>
-            <li className="list-item">
-              <a
-                href="index#projects-section"
-                className="text-base py-3 px-5 font-normal"
-              >
-                <span>Projects</span>
-              </a>
-            </li>
-            <li className="list-item">
-              <a
-                href="index#awards-section"
-                className="text-base py-3 px-5 font-normal"
-              >
-                <span>Awards</span>
-              </a>
-            </li>
-            <li className="list-item">
-              <a
-                href="index#contact-section"
-                className="text-base py-3 px-5 font-normal"
-              >
-                <span>Contact</span>
-              </a>
-            </li>
+            <NavbarItem href="/" text="Home" />
+            <NavbarItem href="/" text="About" />
+            <NavbarItem href="/" text="Education" />
+            <NavbarItem href="/" text="Experience" />
+            <NavbarItem href="/" text="Projects" />
+            <NavbarItem href="/" text="Awards" />
+            <NavbarItem href="/" text="Contact" />
           </ul>
         </div>
       </div>
     </nav>
+  );
+}
+
+function NavbarItem({ href, text }) {
+  const scrollPosition = useScrollPosition();
+  const scrolled = scrollPosition >= 300;
+  return (
+    <li className="list-item">
+      <Link href={href}>
+        <a
+          className={classNames(
+            "text-base py-3 px-5 font-medium hover:border-2 dark:border-b-white border-b-black border-t-transparent border-x-transparent transition-all",
+            {
+              // "dark:border-white border-black": scrolled,
+              // "border-white": !scrolled,
+            }
+          )}
+        >
+          <span
+            id="nav-bar-item"
+            className={classNames(
+              "transition-all duration-100 dark:text-white text-black"
+            )}
+          >
+            {text}
+          </span>
+        </a>
+      </Link>
+    </li>
   );
 }
