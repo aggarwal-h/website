@@ -1,12 +1,9 @@
 import classNames from "classnames";
-import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
-import useIntersection from "../../hooks/useInteraction";
+import React, { useEffect, useState } from "react";
 import ResumeBlock from "../blocks/ResumeBlock";
 import ProjectCard from "../cards/ProjectCard";
 import H2 from "../headings/H2";
-import H3 from "../headings/H3";
 import { useInView } from "react-intersection-observer";
 
 export default function ResumeSection() {
