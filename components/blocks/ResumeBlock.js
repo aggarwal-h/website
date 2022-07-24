@@ -10,7 +10,7 @@ export default function ResumeBlock({
 }) {
   return (
     <div className="flex border-b-1 border-gray-700 mb-7 w-full pb-5">
-      <div className="w-12 h-12 bg-indigo-600 rounded-full items-center justify-center">
+      <div className="flex w-12 h-12 bg-indigo-600 rounded-full items-center justify-center">
         {icon}
       </div>
       <div className="w-[calc(100%-3rem)] pl-5">
