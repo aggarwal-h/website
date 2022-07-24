@@ -3,14 +3,17 @@ import { TextTyper } from "../../utils/utils";
 
 export default function MainHero() {
   const [text, setText] = useState("");
-  const [textTyper, setTextTyper] = useState(null)
+  const [textTyper, setTextTyper] = useState(null);
 
   useEffect(() => {
     const wordList = ["Software Engineering Student.", "Developer."];
     const stopTime = 2000;
-    if (textTyper === null){
-        setTextTyper(new TextTyper(wordList, stopTime, setText));
+    if (textTyper === null) {
+      setTextTyper(new TextTyper(wordList, stopTime, setText));
     }
+    return () => {
+      setTextTyper("");
+    };
   }, [textTyper]);
 
   return (
