@@ -1,6 +1,6 @@
-import Image from "next/image";
 import MainHero from "../components/hero/MainHero";
 import Navbar from "../components/navbar/Navbar";
+import ContactSection from "../components/section/ContactSection";
 import ProjectDescriber from "../components/section/ProjectDescriber";
 import ResumeSection from "../components/section/ResumeSection";
 import SpaceFiller from "../components/space-fillers/SpaceFiller";
@@ -45,8 +45,10 @@ export default function Home() {
       />
 
       <SpaceFiller />
-
       <ResumeSection />
+      <SpaceFiller />
+      <ContactSection />
+      <SpaceFiller />
     </div>
   );
 }
