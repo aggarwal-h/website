@@ -17,7 +17,7 @@ export default function CovidDashboard() {
         leftDisplay={
           <Image
             src="/images/covid-dashboard_logo.jpeg"
-            className="rounded-6xl shadow"
+            className="rounded-4xl shadow"
             width="100%"
             height="100%"
             layout="responsive"

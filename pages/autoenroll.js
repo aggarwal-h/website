@@ -13,7 +13,15 @@ export default function autoenroll() {
       <SpaceFiller />
 
       <ProjectDescriber
-        leftDisplay={<iframe src="/assets/autoenroll_extension.html" frameBorder="0" className="h-[609px] rounded-6xl"></iframe>}
+        leftDisplay={
+          <div className="">
+            <iframe
+              src="/assets/autoenroll_extension.html"
+              frameBorder="0"
+              className="h-[609px] rounded-4xl"
+            ></iframe>
+          </div>
+        }
         rightDisplay={
           <div>
             <h2 className="mb-6 font-poppins font-bold text-5xl">

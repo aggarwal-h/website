@@ -16,7 +16,7 @@ export default function aslx() {
         leftDisplay={
           <Image
             src="/images/aslx_logo.jpg"
-            className="rounded-6xl shadow"
+            className="rounded-4xl shadow"
             width="100%"
             height="100%"
             layout="responsive"
