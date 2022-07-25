@@ -29,7 +29,7 @@ export default function Navbar() {
         <div className="container  mx-auto p-0 flex flex-nowrap">
           <LogoPill />
           <button
-            className="ml-auto text-white"
+            className="ml-auto text-white lg:hidden"
             onClick={() => setOpen(!open)}
             key={"button_" + open}
           >
@@ -59,10 +59,14 @@ export default function Navbar() {
       </div>
       <div
         className={classNames(
-          "w-full absolute bg-gray-50 dark:bg-dark-600 px-10 pt-2 pb-6 rounded-b-3xl",
+          "w-full lg:hidden absolute px-10 pt-2 pb-6 rounded-b-3xl",
           {
             "hidden rounded-2xl": !open,
             "block shadow-xl": open,
+          },
+          {
+            "bg-gray-50 dark:bg-dark-700": scrolled,
+            "bg-transparent": !scrolled,
           }
         )}
       >
@@ -77,18 +81,12 @@ export default function Navbar() {
 }
 
 function NavbarItem({ href, text }) {
-  const scrollPosition = useScrollPosition();
-  const scrolled = scrollPosition >= 300;
   return (
     <li className="list-item">
       <Link href={href}>
         <a
           className={classNames(
-            "text-base py-3 px-5 font-medium hover:border-2 dark:border-b-white border-b-black border-t-transparent border-x-transparent transition-all",
-            {
-              // "dark:border-white border-black": scrolled,
-              // "border-white": !scrolled,
-            }
+            "text-base py-3 px-5 font-medium hover:border-2 dark:border-b-white border-b-black border-t-transparent border-x-transparent transition-all"
           )}
         >
           <span
