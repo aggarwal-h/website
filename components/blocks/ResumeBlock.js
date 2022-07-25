@@ -9,7 +9,7 @@ export default function ResumeBlock({
   children,
 }) {
   return (
-    <div className="flex border-b-1 border-gray-700 mb-7 w-full pb-5">
+    <div className="flex mb-7 w-full bg-gray-50 dark:bg-dark-800 p-5 rounded-4xl">
       <div className="flex w-12 h-12 bg-indigo-600 rounded-full items-center justify-center">
         {icon}
       </div>

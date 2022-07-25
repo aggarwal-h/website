@@ -4,9 +4,9 @@ import H3 from "../headings/H3";
 
 export default function ContactCard({ title, subtitle, icon, href }) {
   return (
-    <div className="hover:scale-[104%] cursor-pointer text-center transition-all duration-100 rounded-4xl shadow-xl bg-dark-800 max-w-xs md:max-w-none">
-      <Link href={href}>
-        <a>
+    <div className="hover:scale-[104%] cursor-pointer text-center transition-all duration-100 rounded-4xl shadow-xl bg-gray-50 dark:bg-dark-800 max-w-xs md:max-w-none">
+      <Link href={href} passHref>
+        <a target="_blank" rel="noreferrer">
           <div className="px-5 py-8 flex flex-col h-full gap-y-5">
             <div className="flex items-center justify-center">
               <div className="flex w-32 h-32 bg-indigo-600 rounded-full items-center justify-center">

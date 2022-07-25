@@ -5,7 +5,7 @@ import H3 from "../headings/H3";
 
 export default function ProjectCard({ title, image, imageAltText, href }) {
   return (
-    <div className="hover:scale-[104%] cursor-pointer text-center transition-all duration-100 rounded-4xl shadow-xl bg-dark-800">
+    <div className="hover:scale-[104%] cursor-pointer text-center transition-all duration-100 rounded-4xl shadow-xl bg-gray-50 dark:bg-dark-800">
       <Link href={href}>
         <a>
           <div className="p-5 flex flex-col h-full">
