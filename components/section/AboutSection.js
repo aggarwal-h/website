@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import ProjectDescriber from "./ProjectDescriber";
 
@@ -31,9 +32,13 @@ export default function AboutSection() {
             and have showcased exceptional analytical and problem solving skills
             through course work.
           </p>
-          <button className="text-white w-[190px] text-base tracking-wide px-4 py-3 mt-8 font-normal hover:font-semibold rounded-3xl bg-gradient-to-r from-indigo-600 to-blue-500 transition-all duration-150 hover:shadow-2xl">
-            Download Resume
-          </button>
+          <div className="text-white w-[190px] text-base tracking-wide px-4 py-3 mt-5 font-normal hover:font-semibold rounded-3xl bg-gradient-to-r from-indigo-600 to-blue-500 transition-all duration-150 hover:shadow-2xl">
+            <Link href="/assets/resume.pdf" passHref>
+              <a target="_blank" rel="noreferrer" download>
+                Download Resume
+              </a>
+            </Link>
+          </div>
         </div>
       }
     />
